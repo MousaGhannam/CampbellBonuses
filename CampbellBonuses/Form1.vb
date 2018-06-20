@@ -75,9 +75,7 @@ Public Class mainWindow
             .ValueMember = "ID"
         End With
         cnn2.Close()
-        Dim a As VariantType
-        a = DateTime.Today
-        MsgBox(a)s
+
     End Sub
 
 
@@ -100,18 +98,18 @@ Public Class mainWindow
         thisDate = Today
         myConnection.ConnectionString = connString
         Dim str As String
-        str = "insert into EmployeeBonus ([EID], [IncentiveID], [ProcedureDate], [PatientFirstName], [PatientLastName], [PatientID]) values (?, ?, ?, ?, ?,?)"
+        str = "insert into EmployeeBonus ([EID], [IncentiveID], [PatientFirstName], [PatientLastName], [PatientID]) values (?, ?, ?, ?,?)"
 
         Dim cmd As OleDbCommand = New OleDbCommand(str, myConnection)
         myConnection.Open()
 
-        Command()
-        cmd.Parameters.Add(New OleDbParameter("EID", CType(ComboBox1.ValueMember, String)))
-        cmd.Parameters.Add(New OleDbParameter("IncentiveID", CType(ComboBox2.ValueMember, String)))
-        cmd.Parameters.Add(New OleDbParameter("ProcedureDate", OleDbType.Date)).Value = DateTime.Today
+
+        cmd.Parameters.Add(New OleDbParameter("EID", Convert.ToInt32(ComboBox1.ValueMember)))
+        cmd.Parameters.Add(New OleDbParameter("IncentiveID", Convert.ToInt32(ComboBox2.ValueMember)))
+        ' cmd.Parameters.Add(New OleDbParameter("ProcedureDate", OleDbType.Date)).Value = DateTime.Today
         cmd.Parameters.Add(New OleDbParameter("PatientFirstName", CType(txtPFname.Text, String)))
         cmd.Parameters.Add(New OleDbParameter("PatientLastName", CType(txtPLname.Text, String)))
-        cmd.Parameters.Add(New OleDbParameter("PatientID", CType(TextBox1.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("PatientID", Convert.ToInt32(TextBox1.Text)))
         Try
             cmd.ExecuteNonQuery()
             cmd.Dispose()
@@ -177,6 +175,10 @@ Public Class mainWindow
     End Sub
 
     Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
+
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
 
     End Sub
 End Class
