@@ -102,13 +102,22 @@ Public Class mainWindow
         Dim cmd As OleDbCommand = New OleDbCommand(str, myConnection)
         myConnection.Open()
 
-        Command()
-        cmd.Parameters.Add(New OleDbParameter("EID", CType(ComboBox1.ValueMember, String)))
-        cmd.Parameters.Add(New OleDbParameter("IncentiveID", CType(ComboBox2.ValueMember, String)))
-        cmd.Parameters.Add(New OleDbParameter("ProcedureDate", OleDbType.Date)).Value = DateTime.Today
-        cmd.Parameters.Add(New OleDbParameter("PatientFirstName", CType(txtPFname.Text, String)))
-        cmd.Parameters.Add(New OleDbParameter("PatientLastName", CType(txtPLname.Text, String)))
-        cmd.Parameters.Add(New OleDbParameter("PatientID", CType(TextBox1.Text, String)))
+        With cmd.Parameters
+            .AddWithValue("EID", Convert.ToInt32(ComboBox1.SelectedValue))
+            .AddWithValue("IncentiveID", Convert.ToInt32(ComboBox2.SelectedValue))
+            .AddWithValue("ProcedureDate", thisDate.Date)
+            .AddWithValue("PatientFirstName", txtPFname.Text)
+            .AddWithValue("PatientLastName", txtPLname.Text)
+            .AddWithValue("PatientID", Convert.ToInt32(TextBox1.Text))
+        End With
+
+
+        'cmd.Parameters.Add(New OleDbParameter("EID", CType(ComboBox1.ValueMember, String)))
+        'cmd.Parameters.Add(New OleDbParameter("IncentiveID", CType(ComboBox2.ValueMember, String)))
+        'cmd.Parameters.Add(New OleDbParameter("ProcedureDate", OleDbType.Date)).Value = DateTime.Today
+        'cmd.Parameters.Add(New OleDbParameter("PatientFirstName", CType(txtPFname.Text, String)))
+        'cmd.Parameters.Add(New OleDbParameter("PatientLastName", CType(txtPLname.Text, String)))
+        'cmd.Parameters.Add(New OleDbParameter("PatientID", CType(TextBox1.Text, String)))
         Try
             cmd.ExecuteNonQuery()
             cmd.Dispose()
@@ -151,7 +160,7 @@ Public Class mainWindow
 
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs)
 
 
     End Sub

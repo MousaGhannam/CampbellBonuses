@@ -45,7 +45,6 @@ Partial Class mainWindow
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.IncentivesInformationBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.IncentivesInformationBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.txtWelcome = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.EmployeeInformationBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -57,12 +56,10 @@ Partial Class mainWindow
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnDelete = New System.Windows.Forms.Button()
         Me.btnSave = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.Employee_BonusBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Employee_BonusTableAdapter = New CampbellBonuses.CampbellBonusesDataSetTableAdapters.Employee_BonusTableAdapter()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         CType(Me.Employee_InformationBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -147,7 +144,7 @@ Partial Class mainWindow
         'BindingNavigatorCountItem
         '
         Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(36, 22)
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(35, 22)
         Me.BindingNavigatorCountItem.Text = "of {0}"
         Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
         '
@@ -233,22 +230,13 @@ Partial Class mainWindow
         Me.IncentivesInformationBindingSource1.DataMember = "IncentivesInformation"
         Me.IncentivesInformationBindingSource1.DataSource = Me.CampbellBonusesDataSet
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(373, 224)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 3
-        Me.Button1.Text = "&OK"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'txtWelcome
         '
         Me.txtWelcome.AutoSize = True
-        Me.txtWelcome.Font = New System.Drawing.Font("Baskerville Old Face", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtWelcome.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtWelcome.Location = New System.Drawing.Point(22, 41)
         Me.txtWelcome.Name = "txtWelcome"
-        Me.txtWelcome.Size = New System.Drawing.Size(240, 43)
+        Me.txtWelcome.Size = New System.Drawing.Size(262, 42)
         Me.txtWelcome.TabIndex = 4
         Me.txtWelcome.Text = "Bonus Tracker"
         '
@@ -333,15 +321,6 @@ Partial Class mainWindow
         Me.btnSave.Text = "Save "
         Me.btnSave.UseVisualStyleBackColor = True
         '
-        'Button4
-        '
-        Me.Button4.Location = New System.Drawing.Point(247, 195)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(75, 23)
-        Me.Button4.TabIndex = 14
-        Me.Button4.Text = "Button4"
-        Me.Button4.UseVisualStyleBackColor = True
-        '
         'btnAdd
         '
         Me.btnAdd.Location = New System.Drawing.Point(247, 114)
@@ -368,15 +347,6 @@ Partial Class mainWindow
         Me.ComboBox2.Size = New System.Drawing.Size(112, 21)
         Me.ComboBox2.TabIndex = 17
         '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(693, 114)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 18
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -401,10 +371,8 @@ Partial Class mainWindow
         Me.ClientSize = New System.Drawing.Size(1444, 549)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.ComboBox2)
         Me.Controls.Add(Me.btnAdd)
-        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.txtPLname)
@@ -414,7 +382,6 @@ Partial Class mainWindow
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.txtWelcome)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.IncentivesInformationBindingNavigator)
         Me.Controls.Add(Me.lblID)
         Me.Name = "mainWindow"
@@ -453,7 +420,6 @@ Partial Class mainWindow
     Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
     Friend WithEvents IncentivesInformationBindingNavigatorSaveItem As ToolStripButton
     Friend WithEvents IncentivesInformationBindingSource1 As BindingSource
-    Friend WithEvents Button1 As Button
     Friend WithEvents Employee_InformationTableAdapter As CampbellBonusesDataSetTableAdapters.Employee_InformationTableAdapter
     Friend WithEvents txtWelcome As Label
     Friend WithEvents Employee_InformationBindingSource As BindingSource
@@ -465,7 +431,6 @@ Partial Class mainWindow
     Friend WithEvents Label3 As Label
     Friend WithEvents btnDelete As Button
     Friend WithEvents btnSave As Button
-    Friend WithEvents Button4 As Button
     Friend WithEvents btnAdd As Button
     Friend WithEvents Employee_BonusBindingSource As BindingSource
     Friend WithEvents Employee_BonusTableAdapter As CampbellBonusesDataSetTableAdapters.Employee_BonusTableAdapter
@@ -473,7 +438,6 @@ Partial Class mainWindow
     Friend WithEvents DataGridViewCheckBoxColumn2 As DataGridViewCheckBoxColumn
     Friend WithEvents DataGridViewCheckBoxColumn3 As DataGridViewCheckBoxColumn
     Friend WithEvents ComboBox2 As ComboBox
-    Friend WithEvents Button2 As Button
     Friend WithEvents EmployeeInformationBindingSource As BindingSource
     Friend WithEvents CampbellBonusesDataSetBindingSource As BindingSource
     Friend WithEvents Label4 As Label
