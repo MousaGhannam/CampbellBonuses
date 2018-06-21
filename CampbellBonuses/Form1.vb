@@ -17,7 +17,7 @@ Public Class mainWindow
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         provider = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source ="
         'Change the following to your access database location
-        dataFile = "C:\Users\Administrator\Documents\CampbellBonuses.accdb"
+        dataFile = "C:\Users\mousaghannnam\source\repos\CampbellBonuses\CampbellBonuses\CampbellBonuses.accdb"
         connString = provider & dataFile
 
         'For Employee Information
@@ -74,10 +74,7 @@ Public Class mainWindow
             'and the value
             .ValueMember = "ID"
         End With
-        cnn2.Close()
-        Dim a As VariantType
-        a = DateTime.Today
-        MsgBox(a)s
+
     End Sub
 
 
@@ -94,7 +91,7 @@ Public Class mainWindow
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         provider = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source ="
         'Change the following to your access database location
-        dataFile = "C:\Users\Administrator\Documents\CampbellBonuses.accdb"
+        dataFile = "C:\Users\mousaghannnam\source\repos\CampbellBonuses\CampbellBonuses\CampbellBonuses.accdb"
         connString = provider & dataFile
         Dim thisDate As Date
         thisDate = Today
