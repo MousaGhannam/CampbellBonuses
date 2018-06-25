@@ -102,6 +102,8 @@ Public Class mainWindow
         Dim cmd As OleDbCommand = New OleDbCommand(str, myConnection)
         myConnection.Open()
 
+
+
         With cmd.Parameters
             .AddWithValue("EID", Convert.ToInt32(ComboBox1.SelectedValue))
             .AddWithValue("IncentiveID", Convert.ToInt32(ComboBox2.SelectedValue))
@@ -112,12 +114,6 @@ Public Class mainWindow
         End With
 
 
-        'cmd.Parameters.Add(New OleDbParameter("EID", CType(ComboBox1.ValueMember, String)))
-        'cmd.Parameters.Add(New OleDbParameter("IncentiveID", CType(ComboBox2.ValueMember, String)))
-        'cmd.Parameters.Add(New OleDbParameter("ProcedureDate", OleDbType.Date)).Value = DateTime.Today
-        'cmd.Parameters.Add(New OleDbParameter("PatientFirstName", CType(txtPFname.Text, String)))
-        'cmd.Parameters.Add(New OleDbParameter("PatientLastName", CType(txtPLname.Text, String)))
-        'cmd.Parameters.Add(New OleDbParameter("PatientID", CType(TextBox1.Text, String)))
         Try
             cmd.ExecuteNonQuery()
             cmd.Dispose()
@@ -183,6 +179,48 @@ Public Class mainWindow
     End Sub
 
     Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
+
+    End Sub
+
+    Private Sub BindingNavigatorMoveLastItem_Click(sender As Object, e As EventArgs) Handles BindingNavigatorMoveLastItem.Click
+
+    End Sub
+
+    Private Sub CreateNewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CreateNewToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub DateToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DateToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub BindingNavigatorMoveNextItem_Click(sender As Object, e As EventArgs) Handles BindingNavigatorMoveNextItem.Click
+
+    End Sub
+
+    Private Sub BindingNavigatorPositionItem_Click(sender As Object, e As EventArgs) Handles BindingNavigatorPositionItem.Click
+
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+    End Sub
+
+    Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
+
+    End Sub
+
+    Public Sub btnAdd_Click(sender As Object, e As EventArgs)
+        Dim currentTable As New DataTable
+        currentTable.Rows.Add(txtPFname, txtPLname, ComboBox2.Text, TextBox1.Text)
+        DataGridView1.Rows.Add(txtPFname, txtPLname, ComboBox2.Text, TextBox1.Text)
+    End Sub
+
+    Private Sub btnAdd_Click_1(sender As Object, e As EventArgs) Handles btnAdd.Click
 
     End Sub
 End Class

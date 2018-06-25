@@ -62,6 +62,26 @@ Partial Class mainWindow
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SummaryByToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DateRangeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.WeekToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MonthToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DayToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AssistantToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CreateNewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EditProfileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.fname = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lname = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Bonus = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.Employee_InformationBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CampbellBonusesDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.IncentivesInformationBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -71,6 +91,8 @@ Partial Class mainWindow
         CType(Me.EmployeeInformationBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CampbellBonusesDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Employee_BonusBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblID
@@ -121,14 +143,14 @@ Partial Class mainWindow
         Me.IncentivesInformationBindingNavigator.CountItem = Me.BindingNavigatorCountItem
         Me.IncentivesInformationBindingNavigator.DeleteItem = Me.BindingNavigatorDeleteItem
         Me.IncentivesInformationBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem, Me.IncentivesInformationBindingNavigatorSaveItem})
-        Me.IncentivesInformationBindingNavigator.Location = New System.Drawing.Point(0, 0)
+        Me.IncentivesInformationBindingNavigator.Location = New System.Drawing.Point(0, 24)
         Me.IncentivesInformationBindingNavigator.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
         Me.IncentivesInformationBindingNavigator.MoveLastItem = Me.BindingNavigatorMoveLastItem
         Me.IncentivesInformationBindingNavigator.MoveNextItem = Me.BindingNavigatorMoveNextItem
         Me.IncentivesInformationBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.IncentivesInformationBindingNavigator.Name = "IncentivesInformationBindingNavigator"
         Me.IncentivesInformationBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.IncentivesInformationBindingNavigator.Size = New System.Drawing.Size(1444, 25)
+        Me.IncentivesInformationBindingNavigator.Size = New System.Drawing.Size(928, 25)
         Me.IncentivesInformationBindingNavigator.TabIndex = 2
         Me.IncentivesInformationBindingNavigator.Text = "BindingNavigator1"
         '
@@ -234,7 +256,7 @@ Partial Class mainWindow
         '
         Me.txtWelcome.AutoSize = True
         Me.txtWelcome.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtWelcome.Location = New System.Drawing.Point(22, 41)
+        Me.txtWelcome.Location = New System.Drawing.Point(30, 55)
         Me.txtWelcome.Name = "txtWelcome"
         Me.txtWelcome.Size = New System.Drawing.Size(262, 42)
         Me.txtWelcome.TabIndex = 4
@@ -263,7 +285,7 @@ Partial Class mainWindow
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.SystemColors.ControlDark
-        Me.Label1.Location = New System.Drawing.Point(65, 195)
+        Me.Label1.Location = New System.Drawing.Point(63, 198)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(37, 13)
         Me.Label1.TabIndex = 6
@@ -305,7 +327,7 @@ Partial Class mainWindow
         '
         'btnDelete
         '
-        Me.btnDelete.Location = New System.Drawing.Point(247, 143)
+        Me.btnDelete.Location = New System.Drawing.Point(237, 162)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(75, 23)
         Me.btnDelete.TabIndex = 12
@@ -314,7 +336,7 @@ Partial Class mainWindow
         '
         'btnSave
         '
-        Me.btnSave.Location = New System.Drawing.Point(247, 172)
+        Me.btnSave.Location = New System.Drawing.Point(237, 191)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 23)
         Me.btnSave.TabIndex = 13
@@ -323,7 +345,7 @@ Partial Class mainWindow
         '
         'btnAdd
         '
-        Me.btnAdd.Location = New System.Drawing.Point(247, 114)
+        Me.btnAdd.Location = New System.Drawing.Point(237, 133)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(75, 23)
         Me.btnAdd.TabIndex = 15
@@ -352,23 +374,168 @@ Partial Class mainWindow
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(48, 224)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(54, 13)
+        Me.Label4.Size = New System.Drawing.Size(0, 13)
         Me.Label4.TabIndex = 19
-        Me.Label4.Text = "Patient ID"
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(109, 224)
+        Me.TextBox1.Location = New System.Drawing.Point(106, 221)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox1.Size = New System.Drawing.Size(112, 20)
         Me.TextBox1.TabIndex = 20
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.Label5.Location = New System.Drawing.Point(46, 224)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(54, 13)
+        Me.Label5.TabIndex = 21
+        Me.Label5.Text = "Patient ID"
+        '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.DataToolStripMenuItem, Me.AssistantToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(928, 24)
+        Me.MenuStrip1.TabIndex = 22
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'FileToolStripMenuItem
+        '
+        Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
+        Me.FileToolStripMenuItem.Text = "File"
+        '
+        'DataToolStripMenuItem
+        '
+        Me.DataToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SummaryByToolStripMenuItem})
+        Me.DataToolStripMenuItem.Name = "DataToolStripMenuItem"
+        Me.DataToolStripMenuItem.Size = New System.Drawing.Size(43, 20)
+        Me.DataToolStripMenuItem.Text = "Data"
+        '
+        'SummaryByToolStripMenuItem
+        '
+        Me.SummaryByToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DateToolStripMenuItem})
+        Me.SummaryByToolStripMenuItem.Name = "SummaryByToolStripMenuItem"
+        Me.SummaryByToolStripMenuItem.Size = New System.Drawing.Size(141, 22)
+        Me.SummaryByToolStripMenuItem.Text = "Summary By"
+        '
+        'DateToolStripMenuItem
+        '
+        Me.DateToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DateRangeToolStripMenuItem, Me.WeekToolStripMenuItem, Me.MonthToolStripMenuItem, Me.DayToolStripMenuItem})
+        Me.DateToolStripMenuItem.Name = "DateToolStripMenuItem"
+        Me.DateToolStripMenuItem.Size = New System.Drawing.Size(98, 22)
+        Me.DateToolStripMenuItem.Text = "Date"
+        '
+        'DateRangeToolStripMenuItem
+        '
+        Me.DateRangeToolStripMenuItem.Name = "DateRangeToolStripMenuItem"
+        Me.DateRangeToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.DateRangeToolStripMenuItem.Text = "Custom Range"
+        '
+        'WeekToolStripMenuItem
+        '
+        Me.WeekToolStripMenuItem.Name = "WeekToolStripMenuItem"
+        Me.WeekToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.WeekToolStripMenuItem.Text = "Week"
+        '
+        'MonthToolStripMenuItem
+        '
+        Me.MonthToolStripMenuItem.Name = "MonthToolStripMenuItem"
+        Me.MonthToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.MonthToolStripMenuItem.Text = "Month"
+        '
+        'DayToolStripMenuItem
+        '
+        Me.DayToolStripMenuItem.Name = "DayToolStripMenuItem"
+        Me.DayToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.DayToolStripMenuItem.Text = "Day"
+        '
+        'AssistantToolStripMenuItem
+        '
+        Me.AssistantToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CreateNewToolStripMenuItem, Me.EditProfileToolStripMenuItem})
+        Me.AssistantToolStripMenuItem.Name = "AssistantToolStripMenuItem"
+        Me.AssistantToolStripMenuItem.Size = New System.Drawing.Size(66, 20)
+        Me.AssistantToolStripMenuItem.Text = "Assistant"
+        '
+        'CreateNewToolStripMenuItem
+        '
+        Me.CreateNewToolStripMenuItem.Name = "CreateNewToolStripMenuItem"
+        Me.CreateNewToolStripMenuItem.Size = New System.Drawing.Size(131, 22)
+        Me.CreateNewToolStripMenuItem.Text = "New"
+        '
+        'EditProfileToolStripMenuItem
+        '
+        Me.EditProfileToolStripMenuItem.Name = "EditProfileToolStripMenuItem"
+        Me.EditProfileToolStripMenuItem.Size = New System.Drawing.Size(131, 22)
+        Me.EditProfileToolStripMenuItem.Text = "Edit Profile"
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.fname, Me.lname, Me.Bonus, Me.ID})
+        Me.DataGridView1.Location = New System.Drawing.Point(370, 116)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.Size = New System.Drawing.Size(444, 150)
+        Me.DataGridView1.TabIndex = 23
+        '
+        'fname
+        '
+        Me.fname.HeaderText = "First Name"
+        Me.fname.Name = "fname"
+        Me.fname.ReadOnly = True
+        '
+        'lname
+        '
+        Me.lname.HeaderText = "Last Name"
+        Me.lname.Name = "lname"
+        Me.lname.ReadOnly = True
+        '
+        'Bonus
+        '
+        Me.Bonus.HeaderText = "Bonus"
+        Me.Bonus.Name = "Bonus"
+        Me.Bonus.ReadOnly = True
+        '
+        'ID
+        '
+        Me.ID.HeaderText = "Patient ID"
+        Me.ID.Name = "ID"
+        Me.ID.ReadOnly = True
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(485, 281)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 24
+        Me.Button1.Text = "Delete Row"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(384, 281)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 25
+        Me.Button2.Text = "Add Row"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'mainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.ClientSize = New System.Drawing.Size(1444, 549)
+        Me.ClientSize = New System.Drawing.Size(928, 350)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.ComboBox2)
@@ -383,7 +550,9 @@ Partial Class mainWindow
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.txtWelcome)
         Me.Controls.Add(Me.IncentivesInformationBindingNavigator)
+        Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.lblID)
+        Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "mainWindow"
         Me.Text = "&OK"
         CType(Me.Employee_InformationBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -396,6 +565,9 @@ Partial Class mainWindow
         CType(Me.EmployeeInformationBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CampbellBonusesDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Employee_BonusBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -442,4 +614,24 @@ Partial Class mainWindow
     Friend WithEvents CampbellBonusesDataSetBindingSource As BindingSource
     Friend WithEvents Label4 As Label
     Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DataToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AssistantToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CreateNewToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SummaryByToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DateToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EditProfileToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DateRangeToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents WeekToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MonthToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DayToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Button1 As Button
+    Friend WithEvents fname As DataGridViewTextBoxColumn
+    Friend WithEvents lname As DataGridViewTextBoxColumn
+    Friend WithEvents Bonus As DataGridViewTextBoxColumn
+    Friend WithEvents ID As DataGridViewTextBoxColumn
+    Friend WithEvents Button2 As Button
 End Class

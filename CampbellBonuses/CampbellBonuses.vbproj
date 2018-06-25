@@ -73,6 +73,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CampbellBonusesBoundDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CampbellBonusesBoundDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="CampbellBonusesDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -121,6 +126,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="CampbellBonusesBoundDataSet.xsc">
+      <DependentUpon>CampbellBonusesBoundDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CampbellBonusesBoundDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CampbellBonusesBoundDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CampbellBonusesBoundDataSet.xss">
+      <DependentUpon>CampbellBonusesBoundDataSet.xsd</DependentUpon>
+    </None>
     <None Include="CampbellBonusesDataSet.xsc">
       <DependentUpon>CampbellBonusesDataSet.xsd</DependentUpon>
     </None>
