@@ -5,16 +5,10 @@ Public Class mainWindow
     Dim dataFile As String
     Dim connString As String
     Dim myConnection As OleDbConnection = New OleDbConnection
-
-    Private Sub IncentivesInformationBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles IncentivesInformationBindingNavigatorSaveItem.Click
-        Me.Validate()
-        Me.IncentivesInformationBindingSource.EndEdit()
-        Me.TableAdapterManager.UpdateAll(Me.CampbellBonusesDataSet)
+    Dim addedBonuses As New DataTable
 
 
-    End Sub
-
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         provider = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source ="
         'Change the following to your access database location
         dataFile = "C:\Users\mousaghannnam\source\repos\CampbellBonuses\CampbellBonuses\CampbellBonuses.accdb"
@@ -74,15 +68,15 @@ Public Class mainWindow
             'and the value
             .ValueMember = "ID"
         End With
-
-    End Sub
-
-
-    Private Sub txtName_TextChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub First_NameTextBox_TextChanged(sender As Object, e As EventArgs)
+        cnn2.Close()
+        'Creating the columns for the datatable
+        addedBonuses.Columns.Add("EID", Type.GetType("System.Double"))
+        addedBonuses.Columns.Add("IncentiveID", Type.GetType("System.Double"))
+        addedBonuses.Columns.Add("ProcedureDate", Type.GetType("System.DateTime"))
+        addedBonuses.Columns.Add("PatientFirstName", Type.GetType("System.String"))
+        addedBonuses.Columns.Add("PatientLastName", Type.GetType("System.String"))
+        addedBonuses.Columns.Add("PatientID", Type.GetType("System.Double"))
+        DataGridView1.DataSource = addedBonuses
 
     End Sub
 
@@ -130,42 +124,12 @@ Public Class mainWindow
     End Sub
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
-        ' Try
-        ' BindingNavigatorAddNewItem.PerformClick()
-        'MsgBox("Deleted succesfully.")
-        'ComboBox1.Visible = True
-        'TextBox1.Visible = False
-        ' Catch ex As Exception
-        'MsgBox(ex.Message)
-        'End Try
+        Dim rowIndex As New Int64
+        rowIndex = DataGridView1.CurrentCell.RowIndex
+        addedBonuses.Rows(rowIndex).Delete()
     End Sub
 
-    Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles txtPFname.TextChanged
-
-    End Sub
-
-    Private Sub TextBox3_TextChanged(sender As Object, e As EventArgs) Handles txtPLname.TextChanged
-
-    End Sub
-
-    Private Sub Employee_BonusDataGridView_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) 
-
-    End Sub
-
-    Private Sub ComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox2.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub Button2_Click(sender As Object, e As EventArgs)
-
-
-    End Sub
-
-    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub FillToolStripButton_Click(sender As Object, e As EventArgs) 
+    Private Sub FillToolStripButton_Click(sender As Object, e As EventArgs)
         Try
             Me.Employee_BonusTableAdapter.Fill(Me.CampbellBonusesDataSet.Employee_Bonus)
         Catch ex As System.Exception
@@ -174,53 +138,39 @@ Public Class mainWindow
 
     End Sub
 
-    Private Sub IncentivesInformationBindingSource_CurrentChanged(sender As Object, e As EventArgs) Handles IncentivesInformationBindingSource.CurrentChanged
-
+    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+        addedBonuses.Rows.Add(Convert.ToInt32(ComboBox1.SelectedValue), Convert.ToInt32(ComboBox2.SelectedValue), Today.Date, txtPFname.Text, txtPLname.Text, Convert.ToInt32(TextBox1.Text))
     End Sub
 
-    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        provider = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source ="
+        'Change the following to your access database location
+        dataFile = "C:\Users\mousaghannnam\source\repos\CampbellBonuses\CampbellBonuses\CampbellBonuses.accdb"
+        connString = provider & dataFile
+        myConnection.ConnectionString = connString
 
+        Dim str As String
+        str = "insert into EmployeeBonus ([EID], [IncentiveID], [ProcedureDate], [PatientFirstName], [PatientLastName], [PatientID]) values (?, ?, ?, ?, ?,?)"
+        Dim cmd As OleDbCommand = New OleDbCommand(str, myConnection)
+        myConnection.Open()
+        For Each row As DataRow In addedBonuses.Rows
+            With cmd.Parameters
+                cmd.Parameters.Clear()
+                .AddWithValue("EID", row.Item("EID"))
+                .AddWithValue("IncentiveID", row("IncentiveID"))
+                .AddWithValue("ProcedureDate", row("ProcedureDate"))
+                .AddWithValue("PatientFirstName", row("PatientFirstName"))
+                .AddWithValue("PatientLastName", row("PatientLastName"))
+                .AddWithValue("PatientID", row("PatientID"))
+                cmd.ExecuteNonQuery()
+
+            End With
+        Next
+        cmd.Dispose()
+        myConnection.Close()
     End Sub
 
-    Private Sub BindingNavigatorMoveLastItem_Click(sender As Object, e As EventArgs) Handles BindingNavigatorMoveLastItem.Click
-
-    End Sub
-
-    Private Sub CreateNewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CreateNewToolStripMenuItem.Click
-
-    End Sub
-
-    Private Sub DateToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DateToolStripMenuItem.Click
-
-    End Sub
-
-    Private Sub BindingNavigatorMoveNextItem_Click(sender As Object, e As EventArgs) Handles BindingNavigatorMoveNextItem.Click
-
-    End Sub
-
-    Private Sub BindingNavigatorPositionItem_Click(sender As Object, e As EventArgs) Handles BindingNavigatorPositionItem.Click
-
-    End Sub
-
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-
-    End Sub
-
-    Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
-
-    End Sub
-
-    Public Sub btnAdd_Click(sender As Object, e As EventArgs)
-        Dim currentTable As New DataTable
-        currentTable.Rows.Add(txtPFname, txtPLname, ComboBox2.Text, TextBox1.Text)
-        DataGridView1.Rows.Add(txtPFname, txtPLname, ComboBox2.Text, TextBox1.Text)
-    End Sub
-
-    Private Sub btnAdd_Click_1(sender As Object, e As EventArgs) Handles btnAdd.Click
+    Private Sub UserToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UserToolStripMenuItem.Click
 
     End Sub
 End Class

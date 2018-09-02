@@ -17,3 +17,8 @@ Namespace CampbellBonusesDataSetTableAdapters
     Partial Public Class IncentivesInformationTableAdapter
     End Class
 End Namespace
+
+Namespace CampbellBonusesDataSetTableAdapters
+    Partial Public Class Employee_InformationTableAdapter
+    End Class
+End Namespace

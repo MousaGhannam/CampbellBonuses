@@ -52,6 +52,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -90,6 +91,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CampbellBonusesDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CampbellBonusesDataSet2.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CampbellBonusesDataSet2.xsd</DependentUpon>
     </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
@@ -158,6 +164,17 @@
     </None>
     <None Include="CampbellBonusesDataSet1.xss">
       <DependentUpon>CampbellBonusesDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="CampbellBonusesDataSet2.xsc">
+      <DependentUpon>CampbellBonusesDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="CampbellBonusesDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CampbellBonusesDataSet2.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CampbellBonusesDataSet2.xss">
+      <DependentUpon>CampbellBonusesDataSet2.xsd</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
