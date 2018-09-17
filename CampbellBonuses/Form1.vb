@@ -1,6 +1,6 @@
 ﻿Imports System.Data.OleDb
 
-Public Class mainWindow
+Public Class MainWindow
     Dim provider As String
     Dim dataFile As String
     Dim connString As String
@@ -11,7 +11,7 @@ Public Class mainWindow
     Public Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         provider = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source ="
         'Change the following to your access database location
-        dataFile = "C:\Users\mousaghannnam\source\repos\CampbellBonuses\CampbellBonuses\CampbellBonuses.accdb"
+        dataFile = "C:\Users\mousaghannnam\source\repos\CampbellBonuses\CampbellBonuses\CampbellBonuses.accdb;"
         connString = provider & dataFile
 
         'For Employee Information
@@ -171,6 +171,14 @@ Public Class mainWindow
     End Sub
 
     Private Sub UserToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UserToolStripMenuItem.Click
+        Form2.Show()
+    End Sub
 
+    Private Sub IncentivesInformationBindingNavigator_RefreshItems(sender As Object, e As EventArgs) Handles IncentivesInformationBindingNavigator.RefreshItems
+
+    End Sub
+
+    Private Sub DateRangeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DateRangeToolStripMenuItem.Click
+        Analysis.Show()
     End Sub
 End Class

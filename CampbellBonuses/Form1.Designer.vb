@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class mainWindow
+Partial Class MainWindow
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -23,7 +23,7 @@ Partial Class mainWindow
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(mainWindow))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainWindow))
         Me.lblID = New System.Windows.Forms.Label()
         Me.Employee_InformationBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CampbellBonusesDataSet = New CampbellBonuses.CampbellBonusesDataSet()
@@ -411,38 +411,38 @@ Partial Class mainWindow
         '
         Me.SummaryByToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DateToolStripMenuItem})
         Me.SummaryByToolStripMenuItem.Name = "SummaryByToolStripMenuItem"
-        Me.SummaryByToolStripMenuItem.Size = New System.Drawing.Size(141, 22)
+        Me.SummaryByToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.SummaryByToolStripMenuItem.Text = "Summary By"
         '
         'DateToolStripMenuItem
         '
         Me.DateToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DateRangeToolStripMenuItem, Me.WeekToolStripMenuItem, Me.MonthToolStripMenuItem, Me.DayToolStripMenuItem})
         Me.DateToolStripMenuItem.Name = "DateToolStripMenuItem"
-        Me.DateToolStripMenuItem.Size = New System.Drawing.Size(98, 22)
+        Me.DateToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.DateToolStripMenuItem.Text = "Date"
         '
         'DateRangeToolStripMenuItem
         '
         Me.DateRangeToolStripMenuItem.Name = "DateRangeToolStripMenuItem"
-        Me.DateRangeToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.DateRangeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.DateRangeToolStripMenuItem.Text = "Custom Range"
         '
         'WeekToolStripMenuItem
         '
         Me.WeekToolStripMenuItem.Name = "WeekToolStripMenuItem"
-        Me.WeekToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.WeekToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.WeekToolStripMenuItem.Text = "Week"
         '
         'MonthToolStripMenuItem
         '
         Me.MonthToolStripMenuItem.Name = "MonthToolStripMenuItem"
-        Me.MonthToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.MonthToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.MonthToolStripMenuItem.Text = "Month"
         '
         'DayToolStripMenuItem
         '
         Me.DayToolStripMenuItem.Name = "DayToolStripMenuItem"
-        Me.DayToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.DayToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.DayToolStripMenuItem.Text = "Day"
         '
         'AssistantToolStripMenuItem
@@ -456,19 +456,19 @@ Partial Class mainWindow
         '
         Me.CreateNewToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UserToolStripMenuItem})
         Me.CreateNewToolStripMenuItem.Name = "CreateNewToolStripMenuItem"
-        Me.CreateNewToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CreateNewToolStripMenuItem.Size = New System.Drawing.Size(131, 22)
         Me.CreateNewToolStripMenuItem.Text = "New"
         '
         'UserToolStripMenuItem
         '
         Me.UserToolStripMenuItem.Name = "UserToolStripMenuItem"
-        Me.UserToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.UserToolStripMenuItem.Size = New System.Drawing.Size(97, 22)
         Me.UserToolStripMenuItem.Text = "User"
         '
         'EditProfileToolStripMenuItem
         '
         Me.EditProfileToolStripMenuItem.Name = "EditProfileToolStripMenuItem"
-        Me.EditProfileToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.EditProfileToolStripMenuItem.Size = New System.Drawing.Size(131, 22)
         Me.EditProfileToolStripMenuItem.Text = "Edit Profile"
         '
         'DataGridView1
@@ -493,7 +493,7 @@ Partial Class mainWindow
         Me.Button3.Text = "batchSave"
         Me.Button3.UseVisualStyleBackColor = True
         '
-        'mainWindow
+        'MainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -519,7 +519,7 @@ Partial Class mainWindow
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.lblID)
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Name = "mainWindow"
+        Me.Name = "MainWindow"
         Me.Text = "&OK"
         CType(Me.Employee_InformationBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CampbellBonusesDataSet, System.ComponentModel.ISupportInitialize).EndInit()
